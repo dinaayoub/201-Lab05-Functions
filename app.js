@@ -30,12 +30,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  var result = [a*b,"The product of " + a + " and " + b + " is " + a*b + "."];
+  var result = [a * b, "The product of " + a + " and " + b + " is " + a * b + "."];
   return result;
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -54,20 +54,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var sum = a + b + c;
-    var multiplication = a * b * c;
-    var thirdElement = a + " and " + b + " and " + c + " sum to " + sum + ".";
-    var fourthElement = "The product of " + a + " and " + b + " and " + c + " is " + multiplication + ".";
-    return [sum,multiplication,thirdElement,fourthElement];
+  var sum = a + b + c;
+  var multiplication = a * b * c;
+  var thirdElement = a + " and " + b + " and " + c + " sum to " + sum + ".";
+  var fourthElement = "The product of " + a + " and " + b + " and " + c + " is " + multiplication + ".";
+  return [sum, multiplication, thirdElement, fourthElement];
 }
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
 /* Problem 4
-Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the
+ array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
@@ -79,12 +80,21 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  var sumOfArrayNumbers = 0;
+  var stringOfNumbers = '';
+  for (var i = 0; i < testArray.length; i++) {  
+    sumOfArrayNumbers = sum(sumOfArrayNumbers,testArray[i])[0];
+    if (i !== testArray.length - 1) {
+      stringOfNumbers += sumArr[i] + ',';
+    } else {
+      stringOfNumbers += sumArr[i];
+    }
+  }
+  stringOfNumbers += ' was passed in as an array of numbers, and ' + sumOfArrayNumbers + ' is their sum.';
+  return [sumOfArrayNumbers,stringOfNumbers];
 }
 
-// Here is the test for sumArray(); uncomment it to run it
-
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -125,7 +135,7 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
